@@ -5,7 +5,7 @@ import cryptoRandomString from "crypto-random-string";
 const app = express();
 app.use(express.json());
 
-let phenomenonName = [
+let phenomenonList = [
   "Light Pillar",
   "Aurora",
   "Nacreous",
@@ -65,7 +65,7 @@ app.get("/id", (req, res) => {
 app.get("/pName/:pName/", (req, res) => {
   let pinfo = [];
   Object.keys(phenomenon).forEach((key, value) => {
-    let n = `:${phenomenon[key].info}`;
+    let n = `:${phenomenon[key].name}`;
     if (req.params.pName == n) {
       console.log(phenomenon[key].info);
       pinfo.push(phenomenon[key].info);
