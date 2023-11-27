@@ -1,9 +1,13 @@
 import express from "express";
 import cryptoRandomString from "crypto-random-string";
+import cors from 'cors'
 
 // Create an instance of an express application
 const app = express();
 app.use(express.json());
+app.use(cors({
+  origin: '*'
+}));
 
 let phenomenonList = [
   "Light Pillar",
